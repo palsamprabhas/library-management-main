@@ -1,0 +1,32 @@
+<div *ngIf="isAddBook">
+    <div>
+    {{addBookResponse.status}}:{{addBookResponse.description}}</div>
+    <button (click)="closeDialog()" type="button" class="btn btn-primary">Close</button>
+</div>
+<div *ngIf="isUpdateBook">
+    <div>
+    {{updatedBookResponse.status}}:{{updatedBookResponse.description}}</div>
+    <button (click)="closeDialog()" type="button" class="btn btn-primary">Close</button>
+</div>
+<div *ngIf="isDeleteBook">
+    <div>
+    {{deletedBookResponse.status}}:{{deletedBookResponse.description}}</div>
+    <button (click)="closeDialog()" type="button" class="btn btn-primary">Close</button>
+</div>
+
+<div *ngIf="isRegisterUser">
+    <div>
+    {{registerUserResponse.status}}:{{registerUserResponse.description}}</div>
+    <button (click)="closeDialog()" type="button" class="btn btn-primary">Close</button>
+</div>
+
+<div *ngIf="isTakeBook">
+    <div>
+    {{takeBookResponse.description}}</div>
+    <button (click)="closeDialog()" type="button" class="btn btn-primary">Close</button>
+</div>
+<div *ngIf="isReturnBook">
+    <div>
+    {{returnBookResponse.description}}</div>
+    <button (click)="closeDialog()" type="button" class="btn btn-primary">Close</button>
+</div>

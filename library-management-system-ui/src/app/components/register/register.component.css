@@ -1,0 +1,96 @@
+.card{
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  height: 80vh;
+}
+
+.link-color{
+  color:#FFD966;
+}
+.alert{
+  color:#FFD966;
+}
+
+
+
+.card-body{
+  width:370px;
+  height: 370px;
+  background-color: #303841;
+}
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+.card-title{
+  display: flex;
+  color: #FFD966; 
+  justify-content: center;
+}
+.form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 3px;
+}
+
+.form-label {
+  color: #FFD966; 
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 95%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #FFD966;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-select{
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #FFD966;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #FFD966;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #FFD966;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-control::placeholder {
+  color: #303841; 
+}
+
+.placeholder-color {
+  color: #303841 !important; 
+}
+
+.form-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  border-color:#FFD966;
+  background-color: #303841;
+  color: #FFD966;
+  font-size: 18px;
+  cursor: pointer;
+}
+.signup-div {
+  width: 200px;
+  color: #FFD966 !important; 
+  margin: 0 auto;
+}

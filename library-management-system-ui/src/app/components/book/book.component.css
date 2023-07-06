@@ -1,0 +1,123 @@
+.mat-card-main {
+  margin: 40px auto;
+  max-width: 800px;
+  width: 100%;
+  background-color: #303841;
+  position: relative;
+  border-radius: 20px;
+}
+
+.mat-card-sub {
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.mat-card-title-book {
+  margin-top: 5px;
+  color: #ffd966;
+}
+
+.add-button {
+  margin-left: auto;
+  position: absolute;
+  right: 20px;
+  display: flex;
+  font-size: 15px;
+  align-items: center;
+  background-color: #303841;
+  border: 1px solid #ffd966;
+  color: #ffd966;
+  padding: 5px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.plus-icon {
+  margin-right: 5px;
+}
+
+.full-width-table {
+  width: 100%;
+  border: 1px solid #ffd966;
+}
+
+.mat-card:not([class*="mat-elevation-z"]) {
+  box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.table-header {
+  background-color: #303841;
+  color: #ffd966;
+}
+
+.book-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 16px 3px 16px;
+  font-weight: bold;
+}
+
+.book-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 16px 16px 16px;
+}
+
+.book-quantity div {
+  margin: auto;
+  padding-right: 22px;
+  text-align: center;
+}
+
+.book-quantity {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  padding: 0px 16px 0px 16px;
+}
+
+.quantity-div {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0px 5px 16px;
+}
+
+.mat-buttons-edit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-button {
+  align-items: center;
+  background-color: #303841;
+  border: 1px solid #ffd966;
+  color: #ffd966;
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.delete-button {
+  align-items: center;
+  background-color: #303841;
+  border: 1px solid #ffd966;
+  color: #ffd966;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+.search-input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+

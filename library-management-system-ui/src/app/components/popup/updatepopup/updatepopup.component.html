@@ -1,0 +1,107 @@
+<div>
+    <div *ngIf="isAddBook">
+        <h5 class="card-title">Add Book</h5>
+        <span *ngIf="bookFormInvalid">Fill all the required fields</span>
+        <form [formGroup]="bookForm">
+            <div class="form-group">
+                <label for="bookTitle">Book Id</label>
+                <input type="text" name="title" class="form-control" ngDefaultControl formControlName="id"
+                    placeholder="Enter book title">
+            </div>
+            <div class="form-group">
+                <label for="bookTitle">Title</label>
+                <input type="text" name="title" class="form-control" ngDefaultControl formControlName="bookname"
+                    placeholder="Enter book title">
+            </div>
+            <div class="form-group">
+                <label for="bookAuthor">Author</label>
+                <input type="text" name="author" class="form-control" id="bookAuthor" ngDefaultControl
+                    formControlName="bookauthor" placeholder="Enter book author">
+            </div>
+            <div class="form-group">
+                <label for="bookGenre">Description</label>
+                <input type="text" name="published" class="form-control" id="bookGenre" ngDefaultControl
+                    formControlName="description" placeholder="Enter book genre">
+            </div>
+            <div class="form-group">
+                <label for="bookQuantity">Quantity</label>
+                <input type="number" name="quantity" class="form-control" id="bookQuantity" ngDefaultControl
+                    formControlName="quantity" placeholder="Enter book quantity">
+            </div>
+            <button (click)="addBook()" type="submit" class="btn btn-primary">Add Book</button>
+            <button (click)="closeDialog()" type="button" class="btn btn-primary">Close</button>
+        </form>
+    </div>
+</div>
+
+<div>
+    <div *ngIf="isUpdate">
+        <h5 class="card-title">Update Book</h5>
+        <span *ngIf="bookFormInvalid">Fill all the required fields</span>
+        <form [formGroup]="updateBookForm">
+            <div class="form-group">
+                <label for="bookTitle">Book Id</label>
+                <input type="text" name="title" class="form-control" ngDefaultControl formControlName="id"
+                    placeholder="Enter book title" [readonly]="true">
+            </div>
+            <div class="form-group">
+                <label for="bookTitle">Title</label>
+                <input type="text" name="title" class="form-control" ngDefaultControl formControlName="bookname"
+                    placeholder="Enter book title">
+            </div>
+            <div class="form-group">
+                <label for="bookAuthor">Author</label>
+                <input type="text" name="author" class="form-control" id="bookAuthor" ngDefaultControl
+                    formControlName="bookauthor" placeholder="Enter book author">
+            </div>
+            <div class="form-group">
+                <label for="bookGenre">Description</label>
+                <input type="text" name="published" class="form-control" id="bookGenre" ngDefaultControl
+                    formControlName="description" placeholder="Enter book genre">
+            </div>
+            <div class="form-group">
+                <label for="bookQuantity">Quantity</label>
+                <input type="number" name="quantity" class="form-control" id="bookQuantity" ngDefaultControl
+                    formControlName="quantity" placeholder="Enter book quantity">
+            </div>
+            <button (click)="updateBook()" type="submit" class="btn btn-primary">Update Book</button>
+            <button (click)="closeDialog()" type="button" class="btn btn-primary">Close</button>
+        </form>
+    </div>
+</div>
+<div *ngIf="isDelete">
+    <button class="btn btn-primary" (click)="deleteBook()">Delete</button>
+    <button (click)="closeDialog()" type="button" class="btn btn-primary">Close</button>
+</div>
+
+<div *ngIf="isTakeBook">
+    <div>
+            <input matInput type="text" placeholder="Student ID" [value]="username" disabled>
+    </div>
+    <div>
+        <mat-form-field>
+            <input matInput [matDatepicker]="startDatePicker" placeholder="Book taking date" [value]="currentDate"
+                disabled>
+            <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #startDatePicker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <input matInput [matDatepicker]="endDatePicker" placeholder="Book returning  date" [value]="futureDate"
+                disabled>
+            <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #endDatePicker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <button class="btn btn-primary" (click)="takeBook()">Take Book</button>
+    <button (click)="closeDialog()" type="button" class="btn btn-primary">Close</button>
+</div>
+
+<div *ngIf="isReturnBook">
+    <div>
+        Do you want to return the book!
+    </div>
+    <button class="btn btn-primary" (click)="returnBook()">Return Book</button>
+    <button (click)="closeDialog()" type="button" class="btn btn-primary">Close</button>
+</div>

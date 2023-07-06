@@ -1,0 +1,32 @@
+<app-menu></app-menu>
+<div class="card">
+    <mat-card class="card-body">
+        <mat-card-header class="card-title">
+            <mat-card-title>REGISTER</mat-card-title>
+        </mat-card-header>
+        <span class="alert" *ngIf="invalidDetails">Fill all the required details.</span>
+        <form [formGroup]="registerForm">
+            <div class="form-header">
+                <label class="form-label">USER ID</label>
+                <input type="text" class="form-control" formControlName="userid" placeholder="USER ID">
+            </div>
+            <div class="form-header">
+                <label class="form-label">PASSWORD</label>
+                <input type="password" formControlName="password" class="form-control" placeholder="PASSWORD">
+            </div>
+            <div class="form-header">
+                <label class="form-label">ROLE</label>
+                <select class="form-select" formControlName="role" placeholder="Select Role">
+                    <option value="" disabled selected>SELECT ROLE</option>
+                    <option value="Student">STUDENT</option>
+                </select>
+            </div>
+            <div class="button-div">
+                <button type="submit" class="form-button" (click)="register()">REGISTER</button>
+            </div>
+        </form>
+        <div class="signup-div">
+            <p>Already a member?<span style="cursor:pointer" (click)="onSubmit()" class="link-color"> Login</span></p>
+        </div>
+    </mat-card>
+</div>

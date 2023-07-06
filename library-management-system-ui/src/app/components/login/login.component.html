@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<div class="main">
+<div class="card">
+  <mat-card class="card-body">
+    <mat-card-header class="card-title">
+      <mat-card-title>LOGIN</mat-card-title>
+    </mat-card-header>
+    <div *ngIf="isLoginFailed" class="alert">
+      Login failed. Please check username and password.
+  </div>
+    <div [formGroup]="loginForm">
+      <div class="form-header">
+        <label class="form-label">USER ID</label>
+        <input type="text" class="form-control" formControlName="username" placeholder="USER ID">
+      </div>
+      <div class="form-header">
+        <label class="form-label">PASSWORD</label>
+        <input type="password" formControlName="password" class="form-control" placeholder="PASSWORD">
+      </div>
+      <div class="button-div">
+        <button type="submit" class="form-button" (click)="login()">Login</button>
+      </div>
+    </div>
+    <div class="signup-div">
+      <p>Not a member yet?<span style="cursor:pointer" (click)="onSubmit()" class="link-color"> Register</span></p>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,24 @@
+<mat-toolbar class="nav-bar" *ngIf="!isUserLoggedIn">
+  <span class="nav-title">LIBRARY MANAGEMENT</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button routerLink="/login" *ngIf="!isUserLoggedIn" class="mat-button">Login</button>
+  <button mat-raised-button routerLink="/register"  *ngIf="!isUserLoggedIn" class="mat-button">Register</button>
+</mat-toolbar>
+<div *ngIf="isAdmin">
+<mat-toolbar class="nav-bar">
+  <span class="nav-title">LIBRARY MANAGEMENT</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button routerLink="/book" *ngIf="isUserLoggedIn" class="mat-button">BOOK</button>
+  <button mat-raised-button routerLink="/logout" *ngIf="isUserLoggedIn" class="mat-button">LOGOUT</button>
+</mat-toolbar>
+</div>
+<div *ngIf="isStudent">
+<mat-toolbar class="nav-bar">
+  <span class="nav-title">LIBRARY MANAGEMENT</span>
+  <span class="example-spacer"></span>
+  <button mat-raised-button routerLink="/student" *ngIf="isUserLoggedIn" class="mat-button">Book</button>
+  <button mat-raised-button routerLink="/take-book" *ngIf="isUserLoggedIn" class="mat-button">Taken Books</button>
+  <button mat-raised-button routerLink="/admin-profile" *ngIf="isUserLoggedIn" class="mat-button">Profile</button>
+  <button mat-raised-button routerLink="/logout" *ngIf="isUserLoggedIn" class="mat-button">Logout</button>
+</mat-toolbar>
+</div>

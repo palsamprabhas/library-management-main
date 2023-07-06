@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: library-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: library-ui
+  template:
+    metadata:
+      labels:
+        app: library-ui
+    spec:
+      containers:
+        - name: library-management-system-ui
+          image: prabhaspalsam/library-management-ui:1.1.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: library-ui
+spec:
+  type: ClusterIP
+  ports:
+    - name: library-ui
+      port: 80
+      targetPort: 80
+  selector:
+    app: library-ui
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: library-ui-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: library-ui
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+

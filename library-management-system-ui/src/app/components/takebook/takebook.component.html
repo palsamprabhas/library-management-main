@@ -1,0 +1,58 @@
+<app-menu></app-menu>
+<mat-card class="mat-card-main" *ngIf="!noBooks">
+    <div class="card-title">
+        <mat-card-header>
+            <mat-card-title class="mat-card-title-book">TAKEN BOOKS</mat-card-title>
+        </mat-card-header>
+    </div>
+    <mat-card class="mat-card-sub">
+        You have not taken any books!
+    </mat-card>
+
+</mat-card>
+<mat-card class="mat-card-main" *ngIf="noBooks">
+    <div class="card-title">
+        <mat-card-header>
+            <mat-card-title class="mat-card-title-book">TAKEN BOOKS</mat-card-title>
+        </mat-card-header>
+    </div>
+    <!-- <div >
+  <input type="text" [(ngModel)]="searchQuery" (input)="applyFilter()" placeholder="SEARCH BOOKS" class="search-input"> 
+    </div> -->
+    <mat-card *ngFor="let book of filteredBooks" class="mat-card-sub">
+        <div class="book-header">
+            <div class="book-id">BOOK ID</div>
+            <div class="book-title">TITLE</div>
+            <div class="book-author">AUTHOR</div>
+        </div>
+        <div class="book-content">
+            <div class="book-id">
+                {{book.book_id}}
+            </div>
+            <div class="book-title">{{book.book_details.book_name}}</div>
+            <div class="book-author">{{book.book_details.book_author}}</div>
+        </div>
+        <div class="book-quantity">
+            Quantity
+            <div>
+                Description
+            </div>
+        </div>
+
+        <div class="quantity-div">
+            <div>
+                {{book.book_details.quantity}}
+            </div>
+            <div>
+                {{book.book_details.description}}
+            </div>
+            <div class="mat-buttons-edit">
+                <button mat-icon-button style="cursor: pointer;" class="delete-button"
+                    (click)="returnBook(book.book_id)">
+                    Return Book
+                </button>
+            </div>
+        </div>
+    </mat-card>
+
+</mat-card>

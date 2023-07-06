@@ -1,0 +1,28 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.nav-bar{
+  background-color: #303841;
+}
+.nav-title{
+  color:#FFD966;
+}
+.mat-button{
+  margin: 0 8px;
+  background-color: #303841;
+  color: #FFD966;
+  padding: 10px;
+  border: 1px solid #FFD966;
+  border-radius: 5px;
+  cursor:pointer;
+}
+
+.mat-toolbar-single-row  {
+  display: flex;
+  /* box-sizing: border-box;  */
+  padding: 0px; 
+  width: 100%;
+  flex-direction: row; 
+  align-items: center;
+  white-space: nowrap;
+}
