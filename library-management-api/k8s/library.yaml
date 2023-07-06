@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: library-management-api
+  labels:
+    app: library-management-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: library-management-api
+  template:
+    metadata:
+      labels:
+        app: library-management-api
+    spec:
+      containers:
+        - name: library-management-api
+          image: prabhaspalsam/library-management-api:1.1.3
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: mongo-config
+                  key: mongo-url
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: signup-user-service
+spec:
+  type: NodePort
+  selector:
+    app: signup
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 30005

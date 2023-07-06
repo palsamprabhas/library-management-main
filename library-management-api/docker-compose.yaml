@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodatabase
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+  librarymanagement:
+    image: library-management:latest
+    container_name: library
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
